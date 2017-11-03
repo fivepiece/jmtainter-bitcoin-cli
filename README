@@ -1,0 +1,3 @@
+run :
+
+./tainter-tx.sh <jmtainter hex tx>
