@@ -15,11 +15,6 @@ tainter_inputs_get_pubkey ()
     ${clientname_cli} decoderawtransaction "$1" | grep -A2 '      "txinwitness"' | grep -A1 "30[0-f]\{100,\}83" | grep -o "0[23][0-f]\{64\}[^0-f]" | tr -d '"'
 }
 
-_tainter_inputs_get_time ()
-{
-    ${clientname_cli} getrawtransaction "$1" 1 | grep '"time"' | grep -o "[0-9]*"
-}
-
 tainter_inputs_get_time ()
 {
     ${clientname_cli} gettxout "$1" "$2" | grep "bestblock" | grep -o "[0-f]\{64\}" | ${clientname_cli} -stdin getblock | grep '"time"' | grep -o "[0-9]*"
