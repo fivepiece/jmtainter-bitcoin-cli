@@ -1,3 +1,6 @@
 run :
 
 ./tainter-tx.sh <jmtainter hex tx>
+
+to be used with output from makers running :
+https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/scripts/jmtainter.py
